@@ -1,0 +1,17 @@
+# kart 1
+$bakgrunn=bilder/bakgrunn.png
+$tid=60
+
+                                           A
+
+
+
+                                                                                           g
+             o      xfx                oo                                                oo oo
+       xx                                                                               AAAAAAA                     oo
+                                                       oxfxo
+  k          A  s g   o o    gs   A
+CCCH         ECCCCCCCCCCCCCCCCCCCCH        g
+BBBG         DBBBBBBBBBBBBBBBBBBBBG       EH    s                  A   s          s  A           A                 g A
+BBBG   s go  DBBBBBBBBBBBBBBBBBBBBG       DICCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCH           A   s        s  gb  A
+BBBICCCCCCCCCFBBBBBBBBBBBBBBBBBBBBG       DBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBG           ECCCCCCCCCCCCCCCCCCCC
