@@ -47,8 +47,8 @@ Status::~ Status()
 
 }
 
-// Brukes blant annet til å regne ut fps, gjenværende tid, og animasjoner.
-// Returnerer antall millisekunder siden forrige gang den ble kjørt.
+// Brukes blant annet til Ã¥ regne ut fps, gjenvÃ¦rende tid, og animasjoner.
+// Returnerer antall millisekunder siden forrige gang den ble kjÃ¸rt.
 int Status::finnBruktTid()
 {
 	QTime qt = QTime::currentTime();

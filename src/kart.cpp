@@ -34,7 +34,7 @@ Kart::Kart( QString url )
 		{
 			QString line = fil.readLine();
 
-			// # er kommentarfelt, og $ er ekstrainformasjon om kartet. De hopper vi over nå.
+			// # er kommentarfelt, og $ er ekstrainformasjon om kartet. De hopper vi over nÃ¥.
 			if ( line.at( 0 ) != '#' && line.at( 0 ) != '$' )
 			{
 				QList<QPixmap*> tmpliste;
@@ -273,7 +273,7 @@ void Kart::lagBoksOst( int x, int y )
 
 void Kart::lagKou( int x, int y )
 {
-	// I tilfelle kou skulle være definert flere steder på kartet, så slipper vi minnelekasje.
+	// I tilfelle kou skulle vÃ¦re definert flere steder pÃ¥ kartet, sÃ¥ slipper vi minnelekasje.
 	if ( kou != 0 )
 		delete kou;
 

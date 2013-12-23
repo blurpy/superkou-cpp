@@ -106,20 +106,20 @@ void Vindu::skadeOver()
 	status->setSkadd( false );
 }
 
-// Sjekker kollisjoner mellom vesener og klosser. Ikke så veldig elegant for øyeblikket, men fungerer greit.
-// Bruker prinsippet om å sjekke om den nye posisjonen er gyldig før noe får flytte på seg.
-// Da slipper jeg å fikse problemet etter at det har skjedd, og jeg slipper hakkende bevegelser ved kollisjoner.
+// Sjekker kollisjoner mellom vesener og klosser. Ikke sÃ¥ veldig elegant for Ã¸yeblikket, men fungerer greit.
+// Bruker prinsippet om Ã¥ sjekke om den nye posisjonen er gyldig fÃ¸r noe fÃ¥r flytte pÃ¥ seg.
+// Da slipper jeg Ã¥ fikse problemet etter at det har skjedd, og jeg slipper hakkende bevegelser ved kollisjoner.
 void Vindu::sjekkKollisjon( Vesen* v, int tid )
 {
-	// Alle vesener må slite med tyngdekrafta.
+	// Alle vesener mÃ¥ slite med tyngdekrafta.
 	v->setYHast( v->getYHast() + 0.003 * tid );
 
-	// Beveger seg mot høyre
+	// Beveger seg mot hÃ¸yre
 	if ( v->getXHast() > 0 )
 	{
-		// For å slippe å sjekke kollisjoner med alle klossene, så finner jeg kun de som kou kan komme
-		// borti ved å gå i den retningen han gjør.
-		// Må også passe på å ikke lese fra ulovlige minneområder. Fort gjort!
+		// For Ã¥ slippe Ã¥ sjekke kollisjoner med alle klossene, sÃ¥ finner jeg kun de som kou kan komme
+		// borti ved Ã¥ gÃ¥ i den retningen han gjÃ¸r.
+		// MÃ¥ ogsÃ¥ passe pÃ¥ Ã¥ ikke lese fra ulovlige minneomrÃ¥der. Fort gjort!
 		int nyposx = (int) ( v->getX() + v->getXHast() * tid );
 		int kollikloss = ( nyposx + v->getLengde() ) / 32;
 		int starty = max( 0, v->getY() / 32 );
@@ -129,7 +129,7 @@ void Vindu::sjekkKollisjon( Vesen* v, int tid )
 
 		for ( int i = starty; i < stoppy; i++ )
 		{
-			// Det holder å vite at det er en kollisjon. Rad eller kolonne vet jeg allerede.
+			// Det holder Ã¥ vite at det er en kollisjon. Rad eller kolonne vet jeg allerede.
 			if ( i < kart->hentHoyde() && kart->hentBredde( i ) > kollikloss && kart->hentBilde( i, kollikloss ) != 0 )
 			{
 				stopp = true;
@@ -253,18 +253,18 @@ void Vindu::paintEvent( QPaintEvent* )
 		int kartbredde = kart->hentKartBredde( kart->hentHoyde() -1 );
 		int offset = 0;
 
-		// Stoppe oppdatering av kou når han faller under kanten på brettet.
+		// Stoppe oppdatering av kou nÃ¥r han faller under kanten pÃ¥ brettet.
 		if ( kou->getY() < kart->hentKartHoyde() +50 )
 		{
 			kou->oppdaterPos( brukttid );
 			sjekkKollisjon( kou, brukttid );
 		}
 
-		// Kou dør om han faller under kanten på brettet, eller bruker opp tida
+		// Kou dÃ¸r om han faller under kanten pÃ¥ brettet, eller bruker opp tida
 		if ( kou->getLever() && kou->getSeier() == false && ( kou->getY() > kart->hentKartHoyde() || status->getSpillTid() <= 0 ) )
 			dodKou();
 	
-		// For å holde kou på midten av skjermen, med unntak av langs kantene av brettet.
+		// For Ã¥ holde kou pÃ¥ midten av skjermen, med unntak av langs kantene av brettet.
 		if ( kou->getX() > 650 / 2 )
 		{
 			if ( kou->getX() > kartbredde - 650 / 2 )
@@ -273,11 +273,11 @@ void Vindu::paintEvent( QPaintEvent* )
 				offset = kou->getX() - 650 / 2;
 		}
 
-		// Bakgrunnsbildet scroller saktere, siden det er mindre enn brettet. Må finne ut hvor på bildet man skal starte å tegne.
+		// Bakgrunnsbildet scroller saktere, siden det er mindre enn brettet. MÃ¥ finne ut hvor pÃ¥ bildet man skal starte Ã¥ tegne.
 		double bgstartpos = (double) bg.width() / ( (double) kartbredde - 650.0 ) * (double) offset / 2.0;
 		painter.drawPixmap( 0, 0, bg, (int) bgstartpos, 0, 650, 450 );
 
-		// Finne ut hvor jeg skal starte å tegne klosser, sånn at bare de synlige blir med.
+		// Finne ut hvor jeg skal starte Ã¥ tegne klosser, sÃ¥nn at bare de synlige blir med.
 		int startpos = kou->getX() - ( kou->getX() - offset );
 	
 		// Tegne klossene
@@ -302,7 +302,7 @@ void Vindu::paintEvent( QPaintEvent* )
 			QPoint p = s->getPosisjon();
 			QRect r = s->getRect();
 
-			// Hvis et vesen faller under kanten på brettet så dør det.
+			// Hvis et vesen faller under kanten pÃ¥ brettet sÃ¥ dÃ¸r det.
 			if ( Vesen* v = dynamic_cast<Vesen*> (s) )
 			{
 				if ( v->getLever() && v->getY() > kart->hentKartHoyde() )
@@ -347,8 +347,8 @@ void Vindu::paintEvent( QPaintEvent* )
 	
 						if ( feiltreff )
 						{
-							// Krympe og bli uovervinnelig i et sekund, så kou ikke dør om han kommer borti
-							// 2 ganger eller fler i sammenstøtet.
+							// Krympe og bli uovervinnelig i et sekund, sÃ¥ kou ikke dÃ¸r om han kommer borti
+							// 2 ganger eller fler i sammenstÃ¸tet.
 							if ( status->getStorrelse() != Status::LITEN )
 							{
 								v->kolliderX();
@@ -441,7 +441,7 @@ void Vindu::paintEvent( QPaintEvent* )
 			{
 				if ( v->getLever() )
 				{
-					// Snur et vesen hvis det kommer til en av kantene på brettet som ikke har en blokkerende kloss.
+					// Snur et vesen hvis det kommer til en av kantene pÃ¥ brettet som ikke har en blokkerende kloss.
 					if ( p.x() <= 0 || p.x() >= kart->hentKartBredde( kart->hentHoyde() -1 ) - v->getAnimasjon()->hentBilde().width() )
 						v->setXHast( v->getXHast() * -1 );
 	
@@ -522,7 +522,7 @@ void Vindu::paintEvent( QPaintEvent* )
 	
 		int kartende = kart->hentKartBredde( kart->hentHoyde() -1 ) - kart->getKou()->getAnimasjon()->hentBilde().width();
 	
-		// Fikse så kou ikke går utenfor kartet
+		// Fikse sÃ¥ kou ikke gÃ¥r utenfor kartet
 		if ( kou->getX() < 0 )
 			kou->setX( 0 );
 		else if ( kou->getX() > kartende )
@@ -533,13 +533,13 @@ void Vindu::paintEvent( QPaintEvent* )
 		//r.moveLeft( r.x() - offset );
 		//painter.drawRect( r );
 
-		// Justere posisjonen til kou før tegning, så han holder seg synlig på skjermen.
+		// Justere posisjonen til kou fÃ¸r tegning, sÃ¥ han holder seg synlig pÃ¥ skjermen.
 		QPoint p = kart->getKou()->getPosisjon();
 		p.setX( kou->getX() - offset );
 		p.setY( p.y() +2 );
 		painter.drawPixmap( p, kou->getAnimasjon()->hentBilde() );
 
-		// Tegne stripa øverst med status informasjon.
+		// Tegne stripa Ã¸verst med status informasjon.
 		QFont f = painter.font();
 		f.setPointSize( 12 );
 		painter.setFont( f );
@@ -553,16 +553,16 @@ void Vindu::paintEvent( QPaintEvent* )
 		painter.drawText( 480, 22, "Tid: " + QString::number( status->getSpillTid() ) );
 		painter.drawText( 560, 22, "Level: " + QString::number( status->getBrettNr() ) );
 
-		// Diverse meldinger som dukker opp på skjermen ved status endring.
+		// Diverse meldinger som dukker opp pÃ¥ skjermen ved status endring.
 		if ( status->getTilstand() == Status::DOD )
 		{
 			QFont f = painter.font();
 			f.setPointSize( 20 );
 			painter.setFont( f );
-			painter.drawText( 250, 180, "Du døde..." );
+			painter.drawText( 250, 180, "Du dÃ¸de..." );
 			f.setPointSize( 12 );
 			painter.setFont( f );
-			painter.drawText( 190, 210, "Trykk 'Enter' for å prøve på nytt." );
+			painter.drawText( 190, 210, "Trykk 'Enter' for Ã¥ prÃ¸ve pÃ¥ nytt." );
 		}
 
 		else if ( status->getTilstand() == Status::HELTDOD )
@@ -570,10 +570,10 @@ void Vindu::paintEvent( QPaintEvent* )
 			QFont f = painter.font();
 			f.setPointSize( 20 );
 			painter.setFont( f );
-			painter.drawText( 250, 180, "Du døde..." );
+			painter.drawText( 250, 180, "Du dÃ¸de..." );
 			f.setPointSize( 12 );
 			painter.setFont( f );
-			painter.drawText( 215, 210, "Trykk 'Enter' for å avslutte." );
+			painter.drawText( 215, 210, "Trykk 'Enter' for Ã¥ avslutte." );
 		}
 
 		else if ( status->getTilstand() == Status::FERDIGBRETT )
