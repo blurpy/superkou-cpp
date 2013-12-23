@@ -1,34 +1,43 @@
-superkou-cpp
-============
+Super Kou C++
+=============
 
--- Super Kou C++ v0.2.6
 
-Super Kou er skrevet i C++, og bruker et rammeverk som heter Qt4 Open Source Edition. For å kompilere kildekoden så må Qt4 og gcc/g++ være installert.
+This version of Super Kou is written in C++, using the Qt4 framework. You need Qt4 and gcc/g++ to compile the source code.
+This is something I wrote while learning to program C++ in school, and is based on an older version of Super Kou in Java.
 
-Windows:
-1. Last ned og installer Qt4 med MinGW (gcc for Windows) fra http://www.trolltech.com/developer/downloads/qt/windows.
-2. Pakk ut kildekoden til Super Kou i en mappe.
-3. Start Qt 4.x.x Command Prompt fra start menyen.
-4. Naviger til mappa med kildekoden til Super Kou, og gå inn i src mappa.
-5. Skriv qmake
-6. Skriv make
-7. Kopier mingwm10.dll, QtCore4.dll, QtGui4.dll til rota hvor superkou.exe er. De filene er å finne i bin mappa der du installerte Qt4.
-8. Ferdig! Bare trykk på superkou.exe for å starte. Det er trygt å slette src mappa.
+Note: the game is in Norwegian.
 
-Linux:
-1. Installer Qt4 og gcc/g++ via pakkesystemet.
-2. Pakk ut kildekoden til Super Kou i en mappe.
-3. Åpne en terminal eller konsoll.
-4. Naviger til mappa med kildekoden til Super Kou, og gå inn i src mappa.
-5. Skriv qmake
-6. Skriv make
-7. Ferdig! Skriv ./superkou på rota for å starte. Det er trygt å slette src mappa. Iconet kou.png ligger i bilder mappa, og kan brukes til snarveier.
 
-Mac:
-1. Antageligvis noe lignende Windows og Linux metoden.
+Steps to compile on Windows:
+1. Download Qt4 for Windows with MinGW (gcc for Windows) from http://qt-project.org/
+2. Clone the Super Kou source code to a folder.
+3. Start Qt 4.x.x Command Prompt from the start menu.
+4. Navigate to the src folder using the command prompt.
+5. Run 'qmake'
+6. Run 'make'
+7. Copy 'mingwm10.dll', 'QtCore4.dll' and 'QtGui4.dll' to the root folder where superkou.exe is. You can find those files in the bin folder where you installed Qt4.
+8. Done! You can start the game using superkou.exe. You can safely delete the src folder.
+Note: The steps have not been verified on Windows since 2006.
+
+Steps to compile on Linux:
+1. Install Qt4 and gcc/g++ using your distribution's package manager.
+2. Clone the Super Kou source code to a folder.
+3. Open a terminal.
+4. Navigate to the src folder using the terminal.
+5. Run 'qmake'
+6. Run 'make'
+7. Done! You can start the game using the superkou binary. You can safely delete the src folder. You can use bilder/kou.png as a shortcut icon.
+
+Steps to compile on Mac:
+1. Probably something like the Windows or Linux method.
+
+Qt Creator can also be used, as a more graphical build tool. It knows what to do with the source code.
+Just remember to set the working directory to the root of the project, or Super Kou wont find any resources.
+
 
 Copyright (c) 2006
 Christian Ihle
 kontakt@usikkert.net
 
-Kode tilgjengelig under GPL lisensen. Se fila LICENSE for lisensdetaljer.
+Source and graphics available under the GNU GPL v2.
+See LICENSE for details.
