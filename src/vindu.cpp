@@ -393,7 +393,7 @@ void Vindu::paintEvent( QPaintEvent* )
                         status->incLiv();
                         msgTimer->setSingleShot( true );
                         msgTimer->start( 1000 );
-                        msg.msg = "Du fikk et ekstra liv!";
+                        msg.msg = QString::fromUtf8("Du fikk et ekstra liv!");
                         msg.x = 240;
                         msg.y = 180;
                     }
@@ -559,10 +559,10 @@ void Vindu::paintEvent( QPaintEvent* )
             QFont f = painter.font();
             f.setPointSize( 20 );
             painter.setFont( f );
-            painter.drawText( 250, 180, "Du døde..." );
+            painter.drawText( 250, 180, QString::fromUtf8("Du døde..." ) );
             f.setPointSize( 12 );
             painter.setFont( f );
-            painter.drawText( 190, 210, "Trykk 'Enter' for å prøve på nytt." );
+            painter.drawText( 190, 210, QString::fromUtf8("Trykk 'Enter' for å prøve på nytt.") );
         }
 
         else if ( status->getTilstand() == Status::HELTDOD )
@@ -570,10 +570,10 @@ void Vindu::paintEvent( QPaintEvent* )
             QFont f = painter.font();
             f.setPointSize( 20 );
             painter.setFont( f );
-            painter.drawText( 250, 180, "Du døde..." );
+            painter.drawText( 250, 180, QString::fromUtf8("Du døde...") );
             f.setPointSize( 12 );
             painter.setFont( f );
-            painter.drawText( 215, 210, "Trykk 'Enter' for å avslutte." );
+            painter.drawText( 215, 210, QString::fromUtf8("Trykk 'Enter' for å avslutte.") );
         }
 
         else if ( status->getTilstand() == Status::FERDIGBRETT )
@@ -581,10 +581,10 @@ void Vindu::paintEvent( QPaintEvent* )
             QFont f = painter.font();
             f.setPointSize( 20 );
             painter.setFont( f );
-            painter.drawText( 240, 180, "Du redda B2!" );
+            painter.drawText( 240, 180, QString::fromUtf8("Du redda B2!") );
             f.setPointSize( 12 );
             painter.setFont( f );
-            painter.drawText( 220, 210, "Trykk 'Enter' for neste brett." );
+            painter.drawText( 220, 210, QString::fromUtf8("Trykk 'Enter' for neste brett.") );
         }
 
         if ( msgTimer->isActive() )
