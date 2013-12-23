@@ -25,17 +25,17 @@
 
 class SpmBoks : public Sprite
 {
-	public:
-		SpmBoks( int x, int y, Animasjon *n, Animasjon *b, Sprite *i );
-		~SpmBoks();
-		void treff();
-		bool isTruffet() const;
-		Sprite* getInnhold() const;
+    public:
+        SpmBoks( int x, int y, Animasjon *n, Animasjon *b, Sprite *i );
+        ~SpmBoks();
+        void treff();
+        bool isTruffet() const;
+        Sprite* getInnhold() const;
 
-	private:
-		Animasjon *ny, *brukt;
-		Sprite *innhold;
-		bool truffet;
+    private:
+        Animasjon *ny, *brukt;
+        Sprite *innhold;
+        bool truffet;
 };
 
 #endif

@@ -31,36 +31,36 @@
 
 class Kart
 {
-	public:
-		Kart( QString url );
-		~Kart();
-		QPixmap* hentBilde( int x, int y ) const;
-		int hentHoyde() const;
-		int hentBredde( int x ) const;
-		int hentKartHoyde() const;
-		int hentKartBredde( int x ) const;
-		Kou* getKou() const;
-		const QList<Sprite*> &getSprites() const;
-		const QPixmap &getBakgrunn() const;
-		int getTid() const;
-		void settInnSprite( Sprite* s );
-		void slettSprite( Sprite* s );
+    public:
+        Kart( QString url );
+        ~Kart();
+        QPixmap* hentBilde( int x, int y ) const;
+        int hentHoyde() const;
+        int hentBredde( int x ) const;
+        int hentKartHoyde() const;
+        int hentKartBredde( int x ) const;
+        Kou* getKou() const;
+        const QList<Sprite*> &getSprites() const;
+        const QPixmap &getBakgrunn() const;
+        int getTid() const;
+        void settInnSprite( Sprite* s );
+        void slettSprite( Sprite* s );
 
-	private:
-		QList< QList<QPixmap*> > bildekart;
-		QMap<char, QPixmap*> bildeoversikt;
-		Kou* kou;
-		QList<Sprite*> sprites;
-		QPixmap bakgrunn;
-		int tid;
-		QPixmap* finnUrl( char tegn, int x, int y );
-		void lagBanan( int x, int y );
-		void lagKou( int x, int y );
-		void lagSpungy( int x, int y );
-		void lagOst( int x, int y );
-		void lagOppgradering( int x, int y );
-		void lagGoompa( int x, int y );
-		void lagBoksOst( int x, int y );
+    private:
+        QList< QList<QPixmap*> > bildekart;
+        QMap<char, QPixmap*> bildeoversikt;
+        Kou* kou;
+        QList<Sprite*> sprites;
+        QPixmap bakgrunn;
+        int tid;
+        QPixmap* finnUrl( char tegn, int x, int y );
+        void lagBanan( int x, int y );
+        void lagKou( int x, int y );
+        void lagSpungy( int x, int y );
+        void lagOst( int x, int y );
+        void lagOppgradering( int x, int y );
+        void lagGoompa( int x, int y );
+        void lagBoksOst( int x, int y );
 };
 
 #endif

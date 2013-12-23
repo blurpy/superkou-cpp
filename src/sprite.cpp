@@ -22,11 +22,11 @@
 
 Sprite::Sprite( int x, int y )
 {
-	posisjon.setX( x );
-	posisjon.setY( y );
-	ani = 0;
-	synlig = true;
-	fjernes = false;
+    posisjon.setX( x );
+    posisjon.setY( y );
+    ani = 0;
+    synlig = true;
+    fjernes = false;
 }
 
 Sprite::~Sprite()
@@ -36,80 +36,80 @@ Sprite::~Sprite()
 
 QPoint Sprite::getPosisjon() const
 {
-	return posisjon;
+    return posisjon;
 }
 
 void Sprite::setPosisjon( QPoint p )
 {
-	posisjon = p;
+    posisjon = p;
 }
 
 Animasjon* Sprite::getAnimasjon() const
 {
-	return ani;
+    return ani;
 }
 
 void Sprite::setAnimasjon( Animasjon* a )
 {
-	ani = a;
+    ani = a;
 }
 
 void Sprite::oppdaterAni( int tid )
 {
-	ani->oppdater( tid );
+    ani->oppdater( tid );
 }
 
 bool Sprite::getSynlig() const
 {
-	return synlig;
+    return synlig;
 }
 
 void Sprite::setSynlig( bool s )
 {
-	synlig = s;
+    synlig = s;
 }
 
 QRect Sprite::getRect() const
 {
-	return QRect( posisjon, ani->hentBilde().size() );
+    return QRect( posisjon, ani->hentBilde().size() );
 }
 
 int Sprite::getX() const
 {
-	return posisjon.x();
+    return posisjon.x();
 }
 
 void Sprite::setX( int x )
 {
-	posisjon.setX( x );
+    posisjon.setX( x );
 }
 
 int Sprite::getY() const
 {
-	return posisjon.y();
+    return posisjon.y();
 }
 
 void Sprite::setY( int y )
 {
-	posisjon.setY( y );
+    posisjon.setY( y );
 }
 
 int Sprite::getHoyde() const
 {
-	return ani->hentBilde().height();
+    return ani->hentBilde().height();
 }
 
 int Sprite::getLengde() const
 {
-	return ani->hentBilde().width();
+    return ani->hentBilde().width();
 }
 
 bool Sprite::getFjernes() const
 {
-	return fjernes;
+    return fjernes;
 }
 
 void Sprite::setFjernes( bool f )
 {
-	fjernes = f;
+    fjernes = f;
 }

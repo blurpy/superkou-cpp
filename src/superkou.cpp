@@ -22,13 +22,13 @@
 
 int main( int argc, char *argv[] )
 {
-	QApplication app( argc, argv );
+    QApplication app( argc, argv );
 
-	Vindu v;
-	v.resize( 650, 445 );
-	v.setWindowTitle( "Super Kou" );
-	v.setWindowIcon( QIcon( "bilder/kou.png" ) );
-	v.show();
+    Vindu v;
+    v.resize( 650, 445 );
+    v.setWindowTitle( "Super Kou" );
+    v.setWindowIcon( QIcon( "bilder/kou.png" ) );
+    v.show();
 
-	return app.exec();
+    return app.exec();
 }

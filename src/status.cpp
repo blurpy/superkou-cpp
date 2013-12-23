@@ -22,24 +22,24 @@
 
 Status::Status()
 {
-	minikou.load( QString( "bilder/kou_mini.png" ) );
-	minispungy.load( QString( "bilder/spungy_mini.png" ) );
-	miniost.load( QString( "bilder/ost3_mini.png" ) );
+    minikou.load( QString( "bilder/kou_mini.png" ) );
+    minispungy.load( QString( "bilder/spungy_mini.png" ) );
+    miniost.load( QString( "bilder/ost3_mini.png" ) );
 
-	liv = 0;
-	ost = 0;
-	spungy = 0;
-	brettnr = 1;
-	fps = 0;
-	spilltid = 0;
-	msteller = 0;
-	fpsteller = 0;
-	ildkuleteller = 0;
-	tilstand = INTRO;
-	storrelse = LITEN;
-	skadd = false;
+    liv = 0;
+    ost = 0;
+    spungy = 0;
+    brettnr = 1;
+    fps = 0;
+    spilltid = 0;
+    msteller = 0;
+    fpsteller = 0;
+    ildkuleteller = 0;
+    tilstand = INTRO;
+    storrelse = LITEN;
+    skadd = false;
 
-	oppdaterTid();
+    oppdaterTid();
 }
 
 Status::~ Status()
@@ -51,171 +51,171 @@ Status::~ Status()
 // Returnerer antall millisekunder siden forrige gang den ble kjørt.
 int Status::finnBruktTid()
 {
-	QTime qt = QTime::currentTime();
-	nytid = time( 0 ) + qt.msec() / 1000.0;
-	int tid = (int) ( ( nytid - forrigetid ) * 1000 );
-	forrigetid = nytid;
+    QTime qt = QTime::currentTime();
+    nytid = time( 0 ) + qt.msec() / 1000.0;
+    int tid = (int) ( ( nytid - forrigetid ) * 1000 );
+    forrigetid = nytid;
 
-	msteller += tid;
-	fpsteller++;
+    msteller += tid;
+    fpsteller++;
 
-	if ( msteller > 1000 )
-	{
-		msteller = msteller % 1000;
-		fps = fpsteller;
-		fpsteller = 0;
+    if ( msteller > 1000 )
+    {
+        msteller = msteller % 1000;
+        fps = fpsteller;
+        fpsteller = 0;
 
-		if ( spilltid > 0 )
-			spilltid--;
-	}
+        if ( spilltid > 0 )
+            spilltid--;
+    }
 
-	if ( ildkuleteller < 700 )
-		ildkuleteller += fps;
+    if ( ildkuleteller < 700 )
+        ildkuleteller += fps;
 
-	return tid;
+    return tid;
 }
 
 // Resetter tidstellerne.
 void Status::oppdaterTid()
 {
-	QTime qt = QTime::currentTime();
-	nytid = time( 0 ) + qt.msec() / 1000.0;
-	forrigetid = nytid;
+    QTime qt = QTime::currentTime();
+    nytid = time( 0 ) + qt.msec() / 1000.0;
+    forrigetid = nytid;
 }
 
 void Status::setLiv( int l )
 {
-	liv = l;
+    liv = l;
 }
 
 int Status::getLiv() const
 {
-	return liv;
+    return liv;
 }
 
 void Status::setOst( int o )
 {
-	ost = o;
+    ost = o;
 }
 
 int Status::getOst() const
 {
-	return ost;
+    return ost;
 }
 
 void Status::incOst()
 {
-	ost++;
+    ost++;
 }
 
 void Status::incLiv()
 {
-	liv++;
+    liv++;
 }
 
 void Status::decLiv()
 {
-	liv--;
+    liv--;
 }
 
 const Status::Tilstand &Status::getTilstand() const
 {
-	return tilstand;
+    return tilstand;
 }
 
 void Status::setTilstand( Tilstand t )
 {
-	tilstand = t;
+    tilstand = t;
 }
 
 const QPixmap &Status::getMiniOst() const
 {
-	return miniost;
+    return miniost;
 }
 
 const QPixmap &Status::getMiniSpungy() const
 {
-	return minispungy;
+    return minispungy;
 }
 
 const QPixmap &Status::getMiniKou() const
 {
-	return minikou;
+    return minikou;
 }
 
 int Status::getBrettNr() const
 {
-	return brettnr;
+    return brettnr;
 }
 
 void Status::setBrettNr( int b )
 {
-	brettnr = b;
+    brettnr = b;
 }
 
 void Status::incBrettNr()
 {
-	brettnr++;
+    brettnr++;
 }
 
 void Status::setSpungy( int s )
 {
-	spungy = s;
+    spungy = s;
 }
 
 int Status::getSpungy() const
 {
-	return spungy;
+    return spungy;
 }
 
 void Status::incSpungy()
 {
-	spungy++;
+    spungy++;
 }
 
 int Status::getSpillTid() const
 {
-	return spilltid;
+    return spilltid;
 }
 
 int Status::getFPS() const
 {
-	return fps;
+    return fps;
 }
 
 void Status::setSpillTid( int t )
 {
-	spilltid = t;
+    spilltid = t;
 }
 
 const Status::Storrelse &Status::getStorrelse() const
 {
-	return storrelse;
+    return storrelse;
 }
 
 void Status::setStorrelse( Status::Storrelse s )
 {
-	storrelse = s;
+    storrelse = s;
 }
 
 bool Status::isSkadd() const
 {
-	return skadd;
+    return skadd;
 }
 
 void Status::setSkadd( bool s )
 {
-	skadd = s;
+    skadd = s;
 }
 
 bool Status::isIldkuleKlar()
 {
-	if ( ildkuleteller >= 700 )
-	{
-		ildkuleteller = 0;
-		return true;
-	}
+    if ( ildkuleteller >= 700 )
+    {
+        ildkuleteller = 0;
+        return true;
+    }
 
-	else
-		return false;
+    else
+        return false;
 }

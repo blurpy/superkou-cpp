@@ -25,14 +25,14 @@
 
 class Spungy : public FarligVesen
 {
-	public:
-		Spungy( int x, int y, double xh, double yh, Animasjon* aVGaa, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHDod );
-		~Spungy();
-		void oppdaterPos( int tid );
-		void kolliderX();
+    public:
+        Spungy( int x, int y, double xh, double yh, Animasjon* aVGaa, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHDod );
+        ~Spungy();
+        void oppdaterPos( int tid );
+        void kolliderX();
 
-	private:
-		Animasjon *aVenstreGaa, *aVenstreDod, *aHoyreGaa, *aHoyreDod;
+    private:
+        Animasjon *aVenstreGaa, *aVenstreDod, *aHoyreGaa, *aHoyreDod;
 };
 
 #endif

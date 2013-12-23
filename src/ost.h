@@ -25,12 +25,12 @@
 
 class Ost : public Sprite
 {
-	public:
-		Ost( int x, int y, Animasjon* a );
-		~Ost();
+    public:
+        Ost( int x, int y, Animasjon* a );
+        ~Ost();
 
-	private:
-		Animasjon* ani;
+    private:
+        Animasjon* ani;
 };
 
 #endif

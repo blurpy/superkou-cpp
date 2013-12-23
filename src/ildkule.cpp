@@ -22,26 +22,26 @@
 
 Ildkule::Ildkule( int x, int y, double xh, double yh, Animasjon* k ) : Vesen( x, y )
 {
-	kule = k;
-	setAnimasjon( kule );
-	setXHast( xh );
-	setYHast( yh );
+    kule = k;
+    setAnimasjon( kule );
+    setXHast( xh );
+    setYHast( yh );
 }
 
 Ildkule::~ Ildkule()
 {
-	delete kule;
+    delete kule;
 }
 
 void Ildkule::kolliderY()
 {
-	setYHast( -0.2 );
+    setYHast( -0.2 );
 }
 
 void Ildkule::kolliderX()
 {
-	setXHast( 0 );
-	setSynlig( false );
-	setLever( false );
-	setFjernes( true );
+    setXHast( 0 );
+    setSynlig( false );
+    setLever( false );
+    setFjernes( true );
 }

@@ -22,206 +22,206 @@
 
 Kou::Kou( int x, int y, Animasjon* aVGaa, Animasjon* aVStaa, Animasjon* aVHeie, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHStaa, Animasjon* aHHeie, Animasjon* aHDod, Animasjon* aLitenVGaa, Animasjon* aLitenVStaa, Animasjon* aLitenVHeie, Animasjon* aLitenVDod, Animasjon* aLitenHGaa, Animasjon* aLitenHStaa, Animasjon* aLitenHHeie, Animasjon* aLitenHDod, Animasjon* aVGaaGal, Animasjon* aVStaaGal, Animasjon* aVHeieGal, Animasjon* aVDodGal, Animasjon* aHGaaGal, Animasjon* aHStaaGal, Animasjon* aHHeieGal, Animasjon* aHDodGal, Animasjon* i ) : Vesen( x, y )
 {
-	aVenstreGaa = aVGaa;
-	aVenstreStaa = aVStaa;
-	aVenstreHeie = aVHeie;
-	aVenstreDod = aVDod;
-	aHoyreGaa = aHGaa;
-	aHoyreStaa = aHStaa;
-	aHoyreHeie = aHHeie;
-	aHoyreDod = aHDod;
+    aVenstreGaa = aVGaa;
+    aVenstreStaa = aVStaa;
+    aVenstreHeie = aVHeie;
+    aVenstreDod = aVDod;
+    aHoyreGaa = aHGaa;
+    aHoyreStaa = aHStaa;
+    aHoyreHeie = aHHeie;
+    aHoyreDod = aHDod;
 
-	aLitenVenstreGaa = aLitenVGaa;
-	aLitenVenstreStaa = aLitenVStaa;
-	aLitenVenstreHeie = aLitenVHeie;
-	aLitenVenstreDod = aLitenVDod;
-	aLitenHoyreGaa = aLitenHGaa;
-	aLitenHoyreStaa = aLitenHStaa;
-	aLitenHoyreHeie = aLitenHHeie;
-	aLitenHoyreDod = aLitenHDod;
+    aLitenVenstreGaa = aLitenVGaa;
+    aLitenVenstreStaa = aLitenVStaa;
+    aLitenVenstreHeie = aLitenVHeie;
+    aLitenVenstreDod = aLitenVDod;
+    aLitenHoyreGaa = aLitenHGaa;
+    aLitenHoyreStaa = aLitenHStaa;
+    aLitenHoyreHeie = aLitenHHeie;
+    aLitenHoyreDod = aLitenHDod;
 
-	aVenstreGaaGal = aVGaaGal;
-	aVenstreStaaGal = aVStaaGal;
-	aVenstreHeieGal = aVHeieGal;
-	aVenstreDodGal = aVDodGal;
-	aHoyreGaaGal = aHGaaGal;
-	aHoyreStaaGal = aHStaaGal;
-	aHoyreHeieGal = aHHeieGal;
-	aHoyreDodGal = aHDodGal;
+    aVenstreGaaGal = aVGaaGal;
+    aVenstreStaaGal = aVStaaGal;
+    aVenstreHeieGal = aVHeieGal;
+    aVenstreDodGal = aVDodGal;
+    aHoyreGaaGal = aHGaaGal;
+    aHoyreStaaGal = aHStaaGal;
+    aHoyreHeieGal = aHHeieGal;
+    aHoyreDodGal = aHDodGal;
 
-	ildkule = i;
+    ildkule = i;
 
-	setAnimasjon( aLitenHoyreStaa );
+    setAnimasjon( aLitenHoyreStaa );
 
-	bakken = false;
-	seier = false;
+    bakken = false;
+    seier = false;
 }
 
 Kou::~ Kou()
 {
-	delete aVenstreGaa;
-	delete aVenstreStaa;
-	delete aVenstreHeie;
-	delete aVenstreDod;
-	delete aHoyreGaa;
-	delete aHoyreStaa;
-	delete aHoyreHeie;
-	delete aHoyreDod;
+    delete aVenstreGaa;
+    delete aVenstreStaa;
+    delete aVenstreHeie;
+    delete aVenstreDod;
+    delete aHoyreGaa;
+    delete aHoyreStaa;
+    delete aHoyreHeie;
+    delete aHoyreDod;
 
-	delete aLitenVenstreGaa;
-	delete aLitenVenstreStaa;
-	delete aLitenVenstreHeie;
-	delete aLitenVenstreDod;
-	delete aLitenHoyreGaa;
-	delete aLitenHoyreStaa;
-	delete aLitenHoyreHeie;
-	delete aLitenHoyreDod;
+    delete aLitenVenstreGaa;
+    delete aLitenVenstreStaa;
+    delete aLitenVenstreHeie;
+    delete aLitenVenstreDod;
+    delete aLitenHoyreGaa;
+    delete aLitenHoyreStaa;
+    delete aLitenHoyreHeie;
+    delete aLitenHoyreDod;
 
-	delete aVenstreGaaGal;
-	delete aVenstreStaaGal;
-	delete aVenstreHeieGal;
-	delete aVenstreDodGal;
-	delete aHoyreGaaGal;
-	delete aHoyreStaaGal;
-	delete aHoyreHeieGal;
-	delete aHoyreDodGal;
+    delete aVenstreGaaGal;
+    delete aVenstreStaaGal;
+    delete aVenstreHeieGal;
+    delete aVenstreDodGal;
+    delete aHoyreGaaGal;
+    delete aHoyreStaaGal;
+    delete aHoyreHeieGal;
+    delete aHoyreDodGal;
 
-	delete ildkule;
+    delete ildkule;
 }
 
 void Kou::oppdaterPos( int tid )
 {
-	if ( status->getStorrelse() == Status::LITEN )
-	{
-		if ( getXHast() > 0 )
-			setAnimasjon( aLitenHoyreGaa );
-		else if ( getXHast() < 0 )
-			setAnimasjon( aLitenVenstreGaa );
-		else
-		{
-			if ( getAnimasjon() == aLitenHoyreGaa || getAnimasjon() == aHoyreStaa )
-				setAnimasjon( aLitenHoyreStaa );
-			else if ( getAnimasjon() == aLitenVenstreGaa || getAnimasjon() == aVenstreStaa )
-				setAnimasjon( aLitenVenstreStaa );
-	
-			if ( getLever() == false )
-			{
-				if ( getAnimasjon() == aLitenHoyreStaa )
-					setAnimasjon( aLitenHoyreDod );
-				else if ( getAnimasjon() == aLitenVenstreStaa )
-					setAnimasjon( aLitenVenstreDod );
-			}
-	
-			if ( seier == true )
-			{
-				if ( getAnimasjon() == aLitenHoyreStaa )
-					setAnimasjon( aLitenHoyreHeie );
-				else if ( getAnimasjon() == aLitenVenstreStaa )
-					setAnimasjon( aLitenVenstreHeie );
-			}
-		}
-	}
+    if ( status->getStorrelse() == Status::LITEN )
+    {
+        if ( getXHast() > 0 )
+            setAnimasjon( aLitenHoyreGaa );
+        else if ( getXHast() < 0 )
+            setAnimasjon( aLitenVenstreGaa );
+        else
+        {
+            if ( getAnimasjon() == aLitenHoyreGaa || getAnimasjon() == aHoyreStaa )
+                setAnimasjon( aLitenHoyreStaa );
+            else if ( getAnimasjon() == aLitenVenstreGaa || getAnimasjon() == aVenstreStaa )
+                setAnimasjon( aLitenVenstreStaa );
 
-	else if ( status->getStorrelse() == Status::VANLIG )
-	{
-		if ( getXHast() > 0 )
-			setAnimasjon( aHoyreGaa );
-		else if ( getXHast() < 0 )
-			setAnimasjon( aVenstreGaa );
-		else
-		{
-			if ( getAnimasjon() == aHoyreGaa || getAnimasjon() == aHoyreStaaGal ||getAnimasjon() == aLitenHoyreStaa )
-				setAnimasjon( aHoyreStaa );
-			else if ( getAnimasjon() == aVenstreGaa || getAnimasjon() == aVenstreStaaGal || getAnimasjon() == aLitenVenstreStaa )
-				setAnimasjon( aVenstreStaa );
-	
-			if ( getLever() == false )
-			{
-				if ( getAnimasjon() == aHoyreStaa )
-					setAnimasjon( aHoyreDod );
-				else if ( getAnimasjon() == aVenstreStaa )
-					setAnimasjon( aVenstreDod );
-			}
+            if ( getLever() == false )
+            {
+                if ( getAnimasjon() == aLitenHoyreStaa )
+                    setAnimasjon( aLitenHoyreDod );
+                else if ( getAnimasjon() == aLitenVenstreStaa )
+                    setAnimasjon( aLitenVenstreDod );
+            }
 
-			if ( seier == true )
-			{
-				if ( getAnimasjon() == aHoyreStaa )
-					setAnimasjon( aHoyreHeie );
-				else if ( getAnimasjon() == aVenstreStaa )
-					setAnimasjon( aVenstreHeie );
-			}
-		}
-	}
+            if ( seier == true )
+            {
+                if ( getAnimasjon() == aLitenHoyreStaa )
+                    setAnimasjon( aLitenHoyreHeie );
+                else if ( getAnimasjon() == aLitenVenstreStaa )
+                    setAnimasjon( aLitenVenstreHeie );
+            }
+        }
+    }
 
-	else if ( status->getStorrelse() == Status::GAL )
-	{
-		if ( getXHast() > 0 )
-			setAnimasjon( aHoyreGaaGal );
-		else if ( getXHast() < 0 )
-			setAnimasjon( aVenstreGaaGal );
-		else
-		{
-			if ( getAnimasjon() == aHoyreGaaGal || getAnimasjon() == aHoyreStaa || getAnimasjon() == aLitenHoyreStaa )
-				setAnimasjon( aHoyreStaaGal );
-			else if ( getAnimasjon() == aVenstreGaaGal || getAnimasjon() == aVenstreStaa || getAnimasjon() == aLitenVenstreStaa )
-				setAnimasjon( aVenstreStaaGal );
-	
-			if ( getLever() == false )
-			{
-				if ( getAnimasjon() == aHoyreStaaGal )
-					setAnimasjon( aHoyreDodGal );
-				else if ( getAnimasjon() == aVenstreStaaGal )
-					setAnimasjon( aVenstreDodGal );
-			}
+    else if ( status->getStorrelse() == Status::VANLIG )
+    {
+        if ( getXHast() > 0 )
+            setAnimasjon( aHoyreGaa );
+        else if ( getXHast() < 0 )
+            setAnimasjon( aVenstreGaa );
+        else
+        {
+            if ( getAnimasjon() == aHoyreGaa || getAnimasjon() == aHoyreStaaGal ||getAnimasjon() == aLitenHoyreStaa )
+                setAnimasjon( aHoyreStaa );
+            else if ( getAnimasjon() == aVenstreGaa || getAnimasjon() == aVenstreStaaGal || getAnimasjon() == aLitenVenstreStaa )
+                setAnimasjon( aVenstreStaa );
 
-			if ( seier == true )
-			{
-				if ( getAnimasjon() == aHoyreStaaGal )
-					setAnimasjon( aHoyreHeieGal );
-				else if ( getAnimasjon() == aVenstreStaaGal )
-					setAnimasjon( aVenstreHeieGal );
-			}
-		}
-	}
+            if ( getLever() == false )
+            {
+                if ( getAnimasjon() == aHoyreStaa )
+                    setAnimasjon( aHoyreDod );
+                else if ( getAnimasjon() == aVenstreStaa )
+                    setAnimasjon( aVenstreDod );
+            }
 
-	Sprite::oppdaterAni( tid );
+            if ( seier == true )
+            {
+                if ( getAnimasjon() == aHoyreStaa )
+                    setAnimasjon( aHoyreHeie );
+                else if ( getAnimasjon() == aVenstreStaa )
+                    setAnimasjon( aVenstreHeie );
+            }
+        }
+    }
+
+    else if ( status->getStorrelse() == Status::GAL )
+    {
+        if ( getXHast() > 0 )
+            setAnimasjon( aHoyreGaaGal );
+        else if ( getXHast() < 0 )
+            setAnimasjon( aVenstreGaaGal );
+        else
+        {
+            if ( getAnimasjon() == aHoyreGaaGal || getAnimasjon() == aHoyreStaa || getAnimasjon() == aLitenHoyreStaa )
+                setAnimasjon( aHoyreStaaGal );
+            else if ( getAnimasjon() == aVenstreGaaGal || getAnimasjon() == aVenstreStaa || getAnimasjon() == aLitenVenstreStaa )
+                setAnimasjon( aVenstreStaaGal );
+
+            if ( getLever() == false )
+            {
+                if ( getAnimasjon() == aHoyreStaaGal )
+                    setAnimasjon( aHoyreDodGal );
+                else if ( getAnimasjon() == aVenstreStaaGal )
+                    setAnimasjon( aVenstreDodGal );
+            }
+
+            if ( seier == true )
+            {
+                if ( getAnimasjon() == aHoyreStaaGal )
+                    setAnimasjon( aHoyreHeieGal );
+                else if ( getAnimasjon() == aVenstreStaaGal )
+                    setAnimasjon( aVenstreHeieGal );
+            }
+        }
+    }
+
+    Sprite::oppdaterAni( tid );
 }
 
 void Kou::hopp( bool ekstrahopp )
 {
-	if ( ( bakken && getYHast() >= 0 && getYHast() < 0.1 ) || ekstrahopp )
-	{
-		setYHast( -1 );
-		bakken = false;
-	}
+    if ( ( bakken && getYHast() >= 0 && getYHast() < 0.1 ) || ekstrahopp )
+    {
+        setYHast( -1 );
+        bakken = false;
+    }
 }
 
 void Kou::kolliderY()
 {
-	bakken = true;
+    bakken = true;
 }
 
 void Kou::setSeier( bool s )
 {
-	seier = s;
+    seier = s;
 }
 
 bool Kou::getSeier() const
 {
-	return seier;
+    return seier;
 }
 
 void Kou::setStatus( Status* s )
 {
-	status = s;
+    status = s;
 }
 
 Ildkule* Kou::getIldkule() const
 {
-	double xh = 0.35;
+    double xh = 0.35;
 
-	if ( getXHast() < 0 || getAnimasjon() == aLitenVenstreStaa || getAnimasjon() == aVenstreStaa || getAnimasjon() == aVenstreStaaGal )
-		xh = -0.35;
+    if ( getXHast() < 0 || getAnimasjon() == aLitenVenstreStaa || getAnimasjon() == aVenstreStaa || getAnimasjon() == aVenstreStaaGal )
+        xh = -0.35;
 
-	return new Ildkule( getX() + getLengde() / 2, getY() + getHoyde() / 2, xh, -0.3, new Animasjon( *ildkule ) );
+    return new Ildkule( getX() + getLengde() / 2, getY() + getHoyde() / 2, xh, -0.3, new Animasjon( *ildkule ) );
 }

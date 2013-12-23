@@ -25,30 +25,30 @@
 
 class Sprite
 {
-	public:
-		Sprite( int x, int y );
-		virtual ~Sprite();
-		QPoint getPosisjon() const;
-		void setPosisjon( QPoint p );
-		Animasjon* getAnimasjon() const;
-		void setAnimasjon( Animasjon* a );
-		void oppdaterAni( int tid );
-		bool getSynlig() const;
-		void setSynlig( bool s );
-		QRect getRect() const;
-		int getX() const;
-		void setX( int x );
-		int getY() const;
-		void setY( int y );
-		int getHoyde() const;
-		int getLengde() const;
-		bool getFjernes() const;
-		void setFjernes( bool f );
+    public:
+        Sprite( int x, int y );
+        virtual ~Sprite();
+        QPoint getPosisjon() const;
+        void setPosisjon( QPoint p );
+        Animasjon* getAnimasjon() const;
+        void setAnimasjon( Animasjon* a );
+        void oppdaterAni( int tid );
+        bool getSynlig() const;
+        void setSynlig( bool s );
+        QRect getRect() const;
+        int getX() const;
+        void setX( int x );
+        int getY() const;
+        void setY( int y );
+        int getHoyde() const;
+        int getLengde() const;
+        bool getFjernes() const;
+        void setFjernes( bool f );
 
-	private:
-		QPoint posisjon;
-		Animasjon* ani;
-		bool synlig, fjernes;
+    private:
+        QPoint posisjon;
+        Animasjon* ani;
+        bool synlig, fjernes;
 };
 
 #endif

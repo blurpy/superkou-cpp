@@ -26,38 +26,38 @@
 
 struct Melding
 {
-	int x;
-	int y;
-	QString msg;
+    int x;
+    int y;
+    QString msg;
 };
 
 class Vindu : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		Vindu();
-		~Vindu();
+    public:
+        Vindu();
+        ~Vindu();
 
-	private:
-		QPixmap bg;
-		Kart* kart;
-		Kou* kou;
-		QTimer *timer, *msgTimer, *skadeTimer;
-		Status* status;
-		Melding msg;
-		void sjekkKollisjon( Vesen* v, int tid );
-		void fiksIntro();
-		void fiksNeste();
-		void dodKou();
+    private:
+        QPixmap bg;
+        Kart* kart;
+        Kou* kou;
+        QTimer *timer, *msgTimer, *skadeTimer;
+        Status* status;
+        Melding msg;
+        void sjekkKollisjon( Vesen* v, int tid );
+        void fiksIntro();
+        void fiksNeste();
+        void dodKou();
 
-	private slots:
-		void skadeOver();
+    private slots:
+        void skadeOver();
 
-	protected:
-		void paintEvent( QPaintEvent* event );
-		void keyPressEvent( QKeyEvent* event );
-		void keyReleaseEvent( QKeyEvent* event );
+    protected:
+        void paintEvent( QPaintEvent* event );
+        void keyPressEvent( QKeyEvent* event );
+        void keyReleaseEvent( QKeyEvent* event );
 };
 
 #endif

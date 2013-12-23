@@ -22,11 +22,11 @@
 
 Banan::Banan( int x, int y, Animasjon* a ) : Sprite( x, y )
 {
-	ani = a;
-	setAnimasjon( ani );
+    ani = a;
+    setAnimasjon( ani );
 }
 
 Banan::~ Banan()
 {
-	delete ani;
+    delete ani;
 }

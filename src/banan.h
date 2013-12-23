@@ -25,12 +25,12 @@
 
 class Banan : public Sprite
 {
-	public:
-		Banan( int x, int y, Animasjon* a );
-		~Banan();
+    public:
+        Banan( int x, int y, Animasjon* a );
+        ~Banan();
 
-	private:
-		Animasjon* ani;
+    private:
+        Animasjon* ani;
 };
 
 #endif

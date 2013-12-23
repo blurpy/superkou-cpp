@@ -22,9 +22,9 @@
 
 Animasjon::Animasjon()
 {
-	totalVarighet = 0;
-	bruktTid = 0;
-	aktivFrameNr = 0;
+    totalVarighet = 0;
+    bruktTid = 0;
+    aktivFrameNr = 0;
 }
 
 Animasjon::~Animasjon()
@@ -34,27 +34,27 @@ Animasjon::~Animasjon()
 
 void Animasjon::leggTilBilde( QPixmap bilde, int varighet )
 {
-	totalVarighet += varighet;
-	frames.append( Frame( bilde, totalVarighet ) );
+    totalVarighet += varighet;
+    frames.append( Frame( bilde, totalVarighet ) );
 }
 
 const QPixmap &Animasjon::hentBilde() const
 {
-	return frames[aktivFrameNr].bilde;
+    return frames[aktivFrameNr].bilde;
 }
 
 void Animasjon::oppdater( int tid )
 {
-	bruktTid += tid;
+    bruktTid += tid;
 
-	if ( bruktTid >= totalVarighet )
-	{
-		bruktTid = bruktTid % totalVarighet;
-		aktivFrameNr = 0;
-	}
-	
-	while ( bruktTid > frames[aktivFrameNr].sluttTid )
-	{
-		aktivFrameNr++;
-	}
+    if ( bruktTid >= totalVarighet )
+    {
+        bruktTid = bruktTid % totalVarighet;
+        aktivFrameNr = 0;
+    }
+
+    while ( bruktTid > frames[aktivFrameNr].sluttTid )
+    {
+        aktivFrameNr++;
+    }
 }

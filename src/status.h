@@ -25,48 +25,48 @@
 
 class Status
 {
-	public:
-		Status();
-		~Status();
-		enum Tilstand { INTRO, SPILL, PAUSE, DOD, HELTDOD, LASTBRETT, FERDIGBRETT, FERDIGSPILL };
-		enum Storrelse { LITEN, VANLIG, GAL };
-		int finnBruktTid();
-		void oppdaterTid();
-		int getBrettNr() const;
-		void setBrettNr( int b );
-		void incBrettNr();
-		void setLiv( int l );
-		int getLiv() const;
-		void setOst( int o );
-		int getOst() const;
-		void incOst();
-		void incLiv();
-		void decLiv();
-		void setSpungy( int s );
-		int getSpungy() const;
-		void incSpungy();
-		const Tilstand &getTilstand() const;
-		void setTilstand( Tilstand t );
-		const QPixmap &getMiniOst() const;
-		const QPixmap &getMiniSpungy() const;
-		const QPixmap &getMiniKou() const;
-		int getFPS() const;
-		int getSpillTid() const;
-		void setSpillTid( int t );
-		const Storrelse &getStorrelse() const;
-		void setStorrelse( Storrelse s );
-		bool isSkadd() const;
-		void setSkadd( bool s );
-		bool isIldkuleKlar();
+    public:
+        Status();
+        ~Status();
+        enum Tilstand { INTRO, SPILL, PAUSE, DOD, HELTDOD, LASTBRETT, FERDIGBRETT, FERDIGSPILL };
+        enum Storrelse { LITEN, VANLIG, GAL };
+        int finnBruktTid();
+        void oppdaterTid();
+        int getBrettNr() const;
+        void setBrettNr( int b );
+        void incBrettNr();
+        void setLiv( int l );
+        int getLiv() const;
+        void setOst( int o );
+        int getOst() const;
+        void incOst();
+        void incLiv();
+        void decLiv();
+        void setSpungy( int s );
+        int getSpungy() const;
+        void incSpungy();
+        const Tilstand &getTilstand() const;
+        void setTilstand( Tilstand t );
+        const QPixmap &getMiniOst() const;
+        const QPixmap &getMiniSpungy() const;
+        const QPixmap &getMiniKou() const;
+        int getFPS() const;
+        int getSpillTid() const;
+        void setSpillTid( int t );
+        const Storrelse &getStorrelse() const;
+        void setStorrelse( Storrelse s );
+        bool isSkadd() const;
+        void setSkadd( bool s );
+        bool isIldkuleKlar();
 
-	private:
-		int liv, ost, spungy, brettnr, fps, spilltid, msteller, fpsteller, ildkuleteller;
-		Tilstand tilstand;
-		Storrelse storrelse;
-		double nytid, forrigetid;
-		QPixmap miniost, minikou, minispungy;
-		bool skadd;
-		
+    private:
+        int liv, ost, spungy, brettnr, fps, spilltid, msteller, fpsteller, ildkuleteller;
+        Tilstand tilstand;
+        Storrelse storrelse;
+        double nytid, forrigetid;
+        QPixmap miniost, minikou, minispungy;
+        bool skadd;
+
 };
 
 #endif

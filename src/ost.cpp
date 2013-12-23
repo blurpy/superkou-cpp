@@ -22,11 +22,11 @@
 
 Ost::Ost( int x, int y, Animasjon* a ) : Sprite( x, y )
 {
-	ani = a;
-	setAnimasjon( a );
+    ani = a;
+    setAnimasjon( a );
 }
 
 Ost::~ Ost()
 {
-	delete ani;
+    delete ani;
 }

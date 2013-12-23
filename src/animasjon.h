@@ -25,29 +25,29 @@
 
 struct Frame
 {
-	QPixmap bilde;
-	int sluttTid;
+    QPixmap bilde;
+    int sluttTid;
 
-	Frame( QPixmap b, int s )
-	{
-		bilde = b;
-		sluttTid = s;
-	}
+    Frame( QPixmap b, int s )
+    {
+        bilde = b;
+        sluttTid = s;
+    }
 };
 
 class Animasjon
 {
-	public:
-		Animasjon();
-		~Animasjon();
-		void leggTilBilde( QPixmap bilde, int varighet );
-		const QPixmap &hentBilde() const;
-		void oppdater( int tid );
+    public:
+        Animasjon();
+        ~Animasjon();
+        void leggTilBilde( QPixmap bilde, int varighet );
+        const QPixmap &hentBilde() const;
+        void oppdater( int tid );
 
-	private:
-		QList<Frame> frames;
-		int totalVarighet, bruktTid;
-		int aktivFrameNr;
+    private:
+        QList<Frame> frames;
+        int totalVarighet, bruktTid;
+        int aktivFrameNr;
 };
 
 #endif

@@ -22,9 +22,9 @@
 
 Vesen::Vesen( int x, int y ) : Sprite( x, y )
 {
-	lever = true;
-	xhast = 0;
-	yhast = 0;
+    lever = true;
+    xhast = 0;
+    yhast = 0;
 }
 
 Vesen::~ Vesen()
@@ -34,39 +34,39 @@ Vesen::~ Vesen()
 
 void Vesen::setLever( bool l )
 {
-	lever = l;
+    lever = l;
 }
 
 bool Vesen::getLever() const
 {
-	return lever;
+    return lever;
 }
 
 double Vesen::getXHast() const
 {
-	return xhast;
+    return xhast;
 }
 
 void Vesen::setXHast( double xh )
 {
-	xhast = xh;
+    xhast = xh;
 }
 
 double Vesen::getYHast() const
 {
-	return yhast;
+    return yhast;
 }
 
 void Vesen::setYHast( double yh )
 {
-	yhast = yh;
+    yhast = yh;
 }
 
 void Vesen::oppdaterPos( int tid )
 {
-	setX( (int) ( getX() + xhast * tid ) );
-	setY( (int) ( getY() + yhast * tid ) );
-	Sprite::oppdaterAni( tid );
+    setX( (int) ( getX() + xhast * tid ) );
+    setY( (int) ( getY() + yhast * tid ) );
+    Sprite::oppdaterAni( tid );
 }
 
 void Vesen::kolliderX()

@@ -25,9 +25,9 @@
 
 class FarligVesen : public Vesen
 {
-	public:
-		FarligVesen( int x, int y );
-		~FarligVesen();
+    public:
+        FarligVesen( int x, int y );
+        ~FarligVesen();
 };
 
 #endif

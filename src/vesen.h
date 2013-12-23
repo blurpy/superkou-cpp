@@ -25,22 +25,22 @@
 
 class Vesen : public Sprite
 {
-	public:
-		Vesen( int x, int y );
-		virtual ~Vesen();
-		void setLever( bool l );
-		bool getLever() const;
-		double getXHast() const;
-		void setXHast( double xh );
-		double getYHast() const;
-		void setYHast( double yh );
-		virtual void oppdaterPos( int tid );
-		virtual void kolliderX();
-		virtual void kolliderY();
+    public:
+        Vesen( int x, int y );
+        virtual ~Vesen();
+        void setLever( bool l );
+        bool getLever() const;
+        double getXHast() const;
+        void setXHast( double xh );
+        double getYHast() const;
+        void setYHast( double yh );
+        virtual void oppdaterPos( int tid );
+        virtual void kolliderX();
+        virtual void kolliderY();
 
-	private:
-		bool lever;
-		double xhast, yhast;
+    private:
+        bool lever;
+        double xhast, yhast;
 };
 
 #endif

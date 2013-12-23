@@ -25,15 +25,15 @@
 
 class Goompa : public FarligVesen
 {
-	public:
-		Goompa( int x, int y, double xh, double yh, Animasjon* h, Animasjon* d );
-		~Goompa();
-		void oppdaterPos( int tid );
-		void kolliderY();
-		void kolliderX();
+    public:
+        Goompa( int x, int y, double xh, double yh, Animasjon* h, Animasjon* d );
+        ~Goompa();
+        void oppdaterPos( int tid );
+        void kolliderY();
+        void kolliderX();
 
-	private:
-		Animasjon *hoppe, *dod;
+    private:
+        Animasjon *hoppe, *dod;
 };
 
 #endif

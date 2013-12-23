@@ -22,44 +22,44 @@
 
 Spungy::Spungy( int x, int y, double xh, double yh, Animasjon* aVGaa, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHDod ) : FarligVesen( x, y )
 {
-	setXHast( xh );
-	setYHast( yh );
+    setXHast( xh );
+    setYHast( yh );
 
-	aVenstreGaa = aVGaa;
-	aVenstreDod = aVDod;
-	aHoyreGaa = aHGaa;
-	aHoyreDod = aHDod;
+    aVenstreGaa = aVGaa;
+    aVenstreDod = aVDod;
+    aHoyreGaa = aHGaa;
+    aHoyreDod = aHDod;
 
-	setAnimasjon( aVGaa );
+    setAnimasjon( aVGaa );
 }
 
 Spungy::~ Spungy()
 {
-	delete aVenstreGaa;
-	delete aVenstreDod;
-	delete aHoyreGaa;
-	delete aHoyreDod;
+    delete aVenstreGaa;
+    delete aVenstreDod;
+    delete aHoyreGaa;
+    delete aHoyreDod;
 }
 
 void Spungy::oppdaterPos( int tid )
 {
-	if ( getXHast() > 0 )
-		setAnimasjon( aHoyreGaa );
-	else if ( getXHast() < 0 )
-		setAnimasjon( aVenstreGaa );
+    if ( getXHast() > 0 )
+        setAnimasjon( aHoyreGaa );
+    else if ( getXHast() < 0 )
+        setAnimasjon( aVenstreGaa );
 
-	if ( getLever() == false )
-	{
-		if ( getAnimasjon() == aHoyreGaa )
-			setAnimasjon( aHoyreDod );
-		else if ( getAnimasjon() == aVenstreGaa )
-			setAnimasjon( aVenstreDod );
-	}
+    if ( getLever() == false )
+    {
+        if ( getAnimasjon() == aHoyreGaa )
+            setAnimasjon( aHoyreDod );
+        else if ( getAnimasjon() == aVenstreGaa )
+            setAnimasjon( aVenstreDod );
+    }
 
-	Sprite::oppdaterAni( tid );
+    Sprite::oppdaterAni( tid );
 }
 
 void Spungy::kolliderX()
 {
-	setXHast( getXHast() * -1 );
+    setXHast( getXHast() * -1 );
 }

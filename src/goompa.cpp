@@ -22,36 +22,36 @@
 
 Goompa::Goompa( int x, int y, double xh, double yh, Animasjon* h, Animasjon* d ) : FarligVesen( x, y )
 {
-	hoppe = h;
-	dod = d;
-	setXHast( xh );
-	setYHast( yh );
-	setAnimasjon( hoppe );
+    hoppe = h;
+    dod = d;
+    setXHast( xh );
+    setYHast( yh );
+    setAnimasjon( hoppe );
 }
 
 Goompa::~Goompa()
 {
-	delete hoppe;
-	delete dod;
+    delete hoppe;
+    delete dod;
 }
 
 void Goompa::oppdaterPos( int tid )
 {
-	if ( getLever() )
-		setAnimasjon( hoppe );
-	else
-		setAnimasjon( dod );
+    if ( getLever() )
+        setAnimasjon( hoppe );
+    else
+        setAnimasjon( dod );
 
-	Sprite::oppdaterAni( tid );
+    Sprite::oppdaterAni( tid );
 }
 
 void Goompa::kolliderY()
 {
-	if ( getLever() )
-		setYHast( -1.2 );
+    if ( getLever() )
+        setYHast( -1.2 );
 }
 
 void Goompa::kolliderX()
 {
-	setXHast( getXHast() * -1 );
+    setXHast( getXHast() * -1 );
 }

@@ -22,34 +22,34 @@
 
 SpmBoks::SpmBoks( int x, int y, Animasjon *n, Animasjon *b, Sprite *i ) : Sprite( x, y )
 {
-	ny = n;
-	brukt = b;
-	innhold = i;
-	innhold->setSynlig( false );
-	truffet = false;
+    ny = n;
+    brukt = b;
+    innhold = i;
+    innhold->setSynlig( false );
+    truffet = false;
 
-	setAnimasjon( ny );
+    setAnimasjon( ny );
 }
 
 SpmBoks::~ SpmBoks()
 {
-	delete ny;
-	delete brukt;
+    delete ny;
+    delete brukt;
 }
 
 void SpmBoks::treff()
 {
-	setAnimasjon( brukt );
-	innhold->setSynlig( true );
-	truffet = true;
+    setAnimasjon( brukt );
+    innhold->setSynlig( true );
+    truffet = true;
 }
 
 bool SpmBoks::isTruffet() const
 {
-	return truffet;
+    return truffet;
 }
 
 Sprite* SpmBoks::getInnhold() const
 {
-	return innhold;
+    return innhold;
 }

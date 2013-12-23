@@ -27,21 +27,21 @@
 
 class Kou : public Vesen
 {
-	public:
-		Kou( int x, int y, Animasjon* aVGaa, Animasjon* aVStaa, Animasjon* aVHeie, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHStaa, Animasjon* aHHeie, Animasjon* aHDod, Animasjon* aLitenVGaa, Animasjon* aLitenVStaa, Animasjon* aLitenVHeie, Animasjon* aLitenVDod, Animasjon* aLitenHGaa, Animasjon* aLitenHStaa, Animasjon* aLitenHHeie, Animasjon* aLitenHDod, Animasjon* aVGaaGal, Animasjon* aVStaaGal, Animasjon* aVHeieGal, Animasjon* aVDodGal, Animasjon* aHGaaGal, Animasjon* aHStaaGal, Animasjon* aHHeieGal, Animasjon* aHDodGal, Animasjon* i );
-		~Kou();
-		void oppdaterPos( int tid );
-		void hopp( bool ekstrahopp = false );
-		void kolliderY();
-		void setSeier( bool s );
-		bool getSeier() const;
-		void setStatus( Status* s );
-		Ildkule* getIldkule() const;
+    public:
+        Kou( int x, int y, Animasjon* aVGaa, Animasjon* aVStaa, Animasjon* aVHeie, Animasjon* aVDod, Animasjon* aHGaa, Animasjon* aHStaa, Animasjon* aHHeie, Animasjon* aHDod, Animasjon* aLitenVGaa, Animasjon* aLitenVStaa, Animasjon* aLitenVHeie, Animasjon* aLitenVDod, Animasjon* aLitenHGaa, Animasjon* aLitenHStaa, Animasjon* aLitenHHeie, Animasjon* aLitenHDod, Animasjon* aVGaaGal, Animasjon* aVStaaGal, Animasjon* aVHeieGal, Animasjon* aVDodGal, Animasjon* aHGaaGal, Animasjon* aHStaaGal, Animasjon* aHHeieGal, Animasjon* aHDodGal, Animasjon* i );
+        ~Kou();
+        void oppdaterPos( int tid );
+        void hopp( bool ekstrahopp = false );
+        void kolliderY();
+        void setSeier( bool s );
+        bool getSeier() const;
+        void setStatus( Status* s );
+        Ildkule* getIldkule() const;
 
-	private:
-		Animasjon *aVenstreGaa, *aVenstreStaa, *aVenstreHeie, *aVenstreDod, *aHoyreGaa, *aHoyreStaa, *aHoyreHeie, *aHoyreDod, *aLitenVenstreGaa, *aLitenVenstreStaa, *aLitenVenstreHeie, *aLitenVenstreDod, *aLitenHoyreGaa, *aLitenHoyreStaa, *aLitenHoyreHeie, *aLitenHoyreDod, *aVenstreGaaGal, *aVenstreStaaGal, *aVenstreHeieGal, *aVenstreDodGal, *aHoyreGaaGal, *aHoyreStaaGal, *aHoyreHeieGal, *aHoyreDodGal, *ildkule;
-		bool bakken, seier;
-		Status* status;
+    private:
+        Animasjon *aVenstreGaa, *aVenstreStaa, *aVenstreHeie, *aVenstreDod, *aHoyreGaa, *aHoyreStaa, *aHoyreHeie, *aHoyreDod, *aLitenVenstreGaa, *aLitenVenstreStaa, *aLitenVenstreHeie, *aLitenVenstreDod, *aLitenHoyreGaa, *aLitenHoyreStaa, *aLitenHoyreHeie, *aLitenHoyreDod, *aVenstreGaaGal, *aVenstreStaaGal, *aVenstreHeieGal, *aVenstreDodGal, *aHoyreGaaGal, *aHoyreStaaGal, *aHoyreHeieGal, *aHoyreDodGal, *ildkule;
+        bool bakken, seier;
+        Status* status;
 };
 
 #endif

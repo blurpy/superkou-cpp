@@ -22,29 +22,29 @@
 
 Oppgradering::Oppgradering( int x, int y, Animasjon* k, Animasjon* r ) : Sprite( x, y )
 {
-	kraftfor = k;
-	reagensror = r;
-	setAnimasjon( kraftfor );
-	type = KRAFTFOR;
+    kraftfor = k;
+    reagensror = r;
+    setAnimasjon( kraftfor );
+    type = KRAFTFOR;
 }
 
 Oppgradering::~ Oppgradering()
 {
-	delete kraftfor;
-	delete reagensror;
+    delete kraftfor;
+    delete reagensror;
 }
 
 void Oppgradering::setType( Type t )
 {
-	type = t;
+    type = t;
 
-	if ( type == REAGENSROR )
-		setAnimasjon( reagensror );
-	else if ( type == KRAFTFOR )
-		setAnimasjon( kraftfor );
+    if ( type == REAGENSROR )
+        setAnimasjon( reagensror );
+    else if ( type == KRAFTFOR )
+        setAnimasjon( kraftfor );
 }
 
 Oppgradering::Type Oppgradering::getType() const
 {
-	return type;
+    return type;
 }

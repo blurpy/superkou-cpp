@@ -25,16 +25,16 @@
 
 class Oppgradering : public Sprite
 {
-	public:
-		Oppgradering( int x, int y, Animasjon* k, Animasjon* r );
-		~Oppgradering();
-		enum Type { KRAFTFOR, REAGENSROR };
-		void setType( Type t );
-		Type getType() const;
+    public:
+        Oppgradering( int x, int y, Animasjon* k, Animasjon* r );
+        ~Oppgradering();
+        enum Type { KRAFTFOR, REAGENSROR };
+        void setType( Type t );
+        Type getType() const;
 
-	private:
-		Animasjon *kraftfor, *reagensror;
-		Type type;
+    private:
+        Animasjon *kraftfor, *reagensror;
+        Type type;
 };
 
 #endif

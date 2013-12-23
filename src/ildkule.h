@@ -25,14 +25,14 @@
 
 class Ildkule : public Vesen
 {
-	public:
-		Ildkule( int x, int y, double xh, double yh, Animasjon* k );
-		~Ildkule();
-		void kolliderY();
-		void kolliderX();
+    public:
+        Ildkule( int x, int y, double xh, double yh, Animasjon* k );
+        ~Ildkule();
+        void kolliderY();
+        void kolliderX();
 
-	private:
-		Animasjon* kule;
+    private:
+        Animasjon* kule;
 };
 
 #endif
